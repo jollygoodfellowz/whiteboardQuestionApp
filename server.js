@@ -77,7 +77,6 @@ app.post('/file', multipartyMiddleware, function(req, res) {
                     exec(java, (error, stdout, stderr) => {
                         if(error) {
                             console.error(`exec error: ${error}`);   
-                            // TODO: Need to trim this before sending it back
                             res.json(`java run time error: ${error}`);   
                         }
 
@@ -128,6 +127,7 @@ app.get('/problems', function(req, res) {
     getProblems(res);    
 });
 
+// Get one problem from the data base
 app.get('/problem', function(req, res, problem) {
     getProblems(res, problem);
 });
