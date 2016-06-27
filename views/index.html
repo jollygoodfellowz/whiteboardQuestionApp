@@ -77,10 +77,12 @@
                                         <button ngf-select="uploadFiles($file, $invalidFiles, problem)" ng-accept=".java" ngf-max-size="100KB" name="file">
                                             Select File</button>
                                         <div ng-switch on="attempt">
-                                            <div ng-if="answer=='Correct!'"><h4><span class="label label-success">{{answer}}</span></h4></div>
-                                            <div ng-if="answer=='Incorrect'"><h4><span class="label label-danger">{{answer}}</span></h4></div>
-                                            <div ng-if="runError"><h4><span class="label label-warning">Error</span></h4>
-                                                <h5 style="word-wrap:break word;">{{runError}}</h5> 
+                                            <div ng-if="status=='Correct!'"><h4><span class="label label-success">Correct!</span></h4></div>
+                                            <div ng-if="status=='Incorrect'"><h4><span class="label label-danger">Incorrect</span></h4>
+                                                <h5 style="word-wrap:break word;">{{text}}</h5> 
+                                            </div>
+                                            <div ng-if="status=='Error'"><h4><span class="label label-warning">Error</span></h4>
+                                                <h5 style="word-wrap:break word;">{{text}}</h5> 
                                             </div>
                                         </div>
 

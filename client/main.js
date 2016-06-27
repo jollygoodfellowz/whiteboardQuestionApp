@@ -32,14 +32,8 @@
                         // if else block controls return diplay
                         var ret = response.data;
                         $scope.attempt = true;
-                        if(ret != "Correct!" && ret != "Incorrect") {
-                            $scope.runError = response.data;
-                            $scope.answer = "";
-                        } else {
-                            $scope.answer = response.data;
-                            $scope.runError = "";
-                            console.log($scope.answer);
-                        }
+                        $scope.status = ret.status;
+                        $scope.text = ret.text;
                     });
                 }, function (response) {
                     if (response.status > 0)

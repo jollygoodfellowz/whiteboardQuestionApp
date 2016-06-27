@@ -64,8 +64,8 @@ app.post('/file', multipartyMiddleware, function(req, res) {
 
                 exec(javac, (error, stdout, stderr) => {
                     if(error) {
-                        res.json(`error in compiling ${error}`);
                         console.error(`exec error: ${error}`);
+                        res.json({status: 'Error', text: 'Error in compiling.' });
                         return;
                     }
                     
@@ -77,17 +77,21 @@ app.post('/file', multipartyMiddleware, function(req, res) {
                     exec(java, (error, stdout, stderr) => {
                         if(error) {
                             console.error(`exec error: ${error}`);   
-                            res.json(`java run time error: ${error}`);   
+                            res.json({status: 'Error', text: `The following run time error occured:\n ${error}` });
                         }
 
                         // The program ran without any errors
                         else if(stdout) {
                             var json = JSON.stringify(stdout);
+                            var correct = req.body.problem.text;
                             // If the output matches what is in the database it is correct
-                            if(stdout == req.body.problem.text) {
-                                res.json("Correct!");
+                            if(stdout == correct) {
+                                res.json({ status: 'Correct!' });
                             } else {
-                                res.json("Incorrect");
+                                compareOutput(correct, stdout, function(output) {
+                                    console.log(output);
+                                    res.json({ status: 'Incorrect', text: output });
+                                });
                             }
                         }
 
@@ -108,6 +112,16 @@ app.post('/file', multipartyMiddleware, function(req, res) {
     }
 });
 
+function compareOutput(correct, incorrect, callback) {
+    var correctArr = correct.split(','); 
+    var incorrectArr = incorrect.split(',');
+    var i;
+    for(i = 0; correctArr[i] == incorrectArr[i]; i++);
+
+    var out = "On case #" + i + ": expected '" + correctArr[i] + "' " + "but output was '" + incorrectArr[i] + "'";
+    console.log(out);
+    callback(out);
+}
 function getProblems(res, problems) {
     MongoClient.connect(url, function (err, db) {
             var data = db.collection(collection).find(problems).toArray(function(err, result) {
