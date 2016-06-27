@@ -1,0 +1,21 @@
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<textarea id="mytextarea" rows="50" cols="50">  </textarea>
+<pre class="prettyprint">class Voila {
+public:
+  // Voila
+    static const string VOILA = "Voila";
+
+      // will not interfere with embedded <a href="#voila2">tags</a>.
+      }
+</pre>
+
+<script>
+$(document).ready(function() {
+	$('#mytextarea').keydown(function(event) {
+		if(event.which == 32) {
+			prettyPrint();
+		}
+	});
+});
+</script>

@@ -1,0 +1,13 @@
+<!-- Create a simple CodeMirror instance -->
+<link rel="stylesheet" href="codemirror/lib/codemirror.css">
+<textarea id="mytextarea" rows="100" cols="100">  </textarea>
+<script src="codemirror/lib/codemirror.js"></script>
+<script src="codemirror/mode/clike/clike.js" type="text/javascript"></script>
+<script>
+	var editor = CodeMirror.fromTextArea(mytextarea, {
+		mode: 'text/x-java',	
+        lineNumbers: true
+        });
+    console.log(localStorage.problem);
+</script>
+<button type="button" id="submit">Submit</button>

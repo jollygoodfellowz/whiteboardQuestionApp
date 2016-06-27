@@ -1,0 +1,93 @@
+<!doctype html>
+<html class="no-js" lang="en ng-app">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Interview Questions</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <!--<script src="vendor/codemirror/lib/codemirror.js"></script>
+        <script src="vendor/codemirror/mode/clike/clike.js" type="text/javascript"></script> -->
+        <script src="modernizr-2.8.3.min.js"></script> 
+    </head>
+    <body class="container" ng-app="interviewQs">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">Brand</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Contact Us <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">About</a></li>
+              </ul>
+              <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <!-- <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.12.0.min.js"><\/script>')</script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js""></script>
+        <script src="ng-file-upload/dist/ng-file-upload.min.js"></script>
+        <script src="plugins.js"></script>
+        <script src="main.js"></script>
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+        <!-- Not Using this yet <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script> -->
+        <div class="page-header">
+            <h1 align="center">Coding Interview Questions<br><br>
+             <small>
+                 For each of the questions below you need to create a class that contains the functional signature mentioned in the problem. Our test module will take care of the rest.
+            </h1>
+        </div>
+        <h3><span class="label label-primary">Here is an example</span></h3>
+            <pre class="prettyprint">
+            public class FizzBuzz {
+                public String fizzBuzz(int x) {
+                    //fill me out
+                }
+            }</pre>
+            <div ng-controller="QuestionController">
+                <div ng-show="isValid">
+                    <div ng-repeat="problem in qs"><br>
+                        <a href="#"  ng-click="show = ! show" ng-init="show=false">{{problem.name}}</a>
+                            <ul ng-show="show">
+                                <div class="panel panel-primary">
+                                    <div class="panel-body">
+                                    <h3 class="pull-right">{{problem.problem}}</h3>
+                                    <h4><span class="label label-info">Requirements:</span></h4>
+                                    <li class="class-name"> File name: {{problem.class}}.java </li>
+                                    <li class="signature"> Function signature: </li>
+                                    <pre class="prettyprint">public {{problem.return}} {{problem.function}}({{problem.parameters}});</pre> 
+                                    <form ng-app="interviewQs" ng-controller="fileUploader">
+                                        <button ngf-select="uploadFiles($file, $invalidFiles, problem)" ng-accept=".java" ngf-max-size="100KB" name="file">
+                                            Select File</button>
+                                        <div ng-switch on="attempt">
+                                            <div ng-if="answer=='Correct!'"><h4><span class="label label-success">{{answer}}</span></h4></div>
+                                            <div ng-if="answer=='Incorrect'"><h4><span class="label label-danger">{{answer}}</span></h4></div>
+                                            <div ng-if="runError"><h4><span class="label label-warning">{{runError}}</span></h4></div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </body>
+</html>

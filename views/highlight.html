@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="../highlight/styles/dark.css">
+<script src="../highlight/lib/highlight.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+<pre><code class="java hljs">
+public class Bob {
+
+	public Bob() {
+		System.out.println("hi");
+	}
+}
+</code></pre>
+
+<script>
+$(document).ready(function() {
+	$('pre code').each(function(i, block) {
+		console.log("Init");
+                hljs.highlightBlock(block);
+        });
+});
+</script>
