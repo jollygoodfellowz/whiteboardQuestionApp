@@ -22,6 +22,7 @@
     "multer": "^1.1.0",
     "ng-file-upload": "^12.0.4",
     "process": "^0.11.5",
+    "request": "^2.72.0",
     "require": "^2.4.20",
     "sys": "0.0.1"
   }

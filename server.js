@@ -118,7 +118,7 @@ function compareOutput(correct, incorrect, callback) {
     var i;
     for(i = 0; correctArr[i] == incorrectArr[i]; i++);
 
-    var out = "On case #" + i + ": expected '" + correctArr[i] + "' " + "but output was '" + incorrectArr[i] + "'";
+    var out = "On case #" + (i+1) + ": expected '" + correctArr[i] + "' " + "but output was '" + incorrectArr[i] + "'";
     console.log(out);
     callback(out);
 }
