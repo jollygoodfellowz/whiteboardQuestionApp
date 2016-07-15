@@ -7,6 +7,8 @@ var html = require('html');
 var ejs = require('ejs');
 var exec = require('child_process').exec;
 var process = require('process');
+var http = require('http');
+
 var multipartyMiddleware = multiparty();
 
 app = express();
@@ -34,7 +36,6 @@ var problems = function(db, callback) {
 app.get('/', function(req, res) {
     res.render(app.settings.views + "index.html");
 });
-app.listen(3030);
 
 // Upload the java file
 app.post('/file', multipartyMiddleware, function(req, res) {
@@ -145,6 +146,9 @@ app.get('/problems', function(req, res) {
 app.get('/problem', function(req, res, problem) {
     getProblems(res, problem);
 });
+
+app.server = http.createServer(app);
+app.server.listen(3030);
 
 // Console will print the message
 console.log('Server running at http://127.0.0.1:3030/');
