@@ -4,9 +4,10 @@
     "Name": "jollygoodfellowz/interviews",
     "Update": "true"
   },
-  "Ports": [
+  "Volumes": [
     {
-      "ContainerPort": "5000"
+      "HostDirectory": "/data/db/",
+      "ContainerDirectory": "/etc/db"
     }
   ],
   "Logging": "/var/log/nginx"

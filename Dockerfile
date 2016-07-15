@@ -8,7 +8,6 @@ RUN npm install
 
 ADD client/ .
 ADD config/ .
-ADD server/ .
 ADD server.js .
 ADD test_modules/ .
 ADD vendor/ .
