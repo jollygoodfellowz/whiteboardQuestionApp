@@ -13,6 +13,8 @@ var multipartyMiddleware = multiparty();
 
 app = express();
 app.set('views', __dirname + '/views/');
+app.set(`port`, process.env.PORT || 8081);
+app.listen(app.get(`port`));
 
 // Use these folders for static assets
 app.use(express.static('views'));
@@ -147,8 +149,5 @@ app.get('/problem', function(req, res, problem) {
     getProblems(res, problem);
 });
 
-app.server = http.createServer(app);
-app.server.listen(3030);
-
 // Console will print the message
-console.log('Server running at http://127.0.0.1:3030/');
+console.log('Server running at http://127.0.0.1:8081/');
