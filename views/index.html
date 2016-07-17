@@ -64,7 +64,7 @@
             <div ng-controller="QuestionController">
                 <div ng-show="isValid">
                     <div ng-repeat="problem in qs"><br>
-                        <a href="#"  ng-click="show = ! show" ng-init="show=false">{{problem.name}}</a>
+                        <a ng-click="show = ! show" ng-init="show=false">{{problem.name}}</a>
                             <ul ng-show="show">
                                 <div class="panel panel-primary">
                                     <div class="panel-body">
