@@ -10,7 +10,6 @@
         })
 	}]);
 
-	var server = "http://127.0.0.1:3030";
     app.controller('fileUploader', ['$scope', 'Upload', '$timeout', function ($scope, Upload, $timeout) {
 
         // upload
@@ -19,8 +18,9 @@
             $scope.file = file;
             $scope.errFiles = errFiles;
             if (file) {
+                var location = window.location.href + "file";
                 file.upload = Upload.upload({
-                    url: server + "/file",
+                    url: location, 
                     type: 'POST',
                     data: {file: file, problem: problem}
                 });
