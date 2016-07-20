@@ -2,13 +2,12 @@
         {
             id: '1',
             name: 'FizzBuzz',
-            problem:  'For multiples of three print “Fizz” and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”',
+            problem:  'For multiples of three return “Fizz” and for multiples of five return “Buzz”. For numbers which are multiples of both three and five return “FizzBuzz”. If the number is not a multiple of three or five return an empty string "".',
             function: 'multiplesof3and5',
             class: 'FizzBuzz',
             parameters:'int x',
             return: 'int',
-            solved: 'false',
-            text: ',,Fizz,,Buzz,Fizz,,,Fizz,Buzz,,Fizz,,,FizzBuzz,,,Fizz,,Buzz,Fizz,,,Fizz,Buzz,,Fizz,,,FizzBuzz,,,Fizz,,Buzz,Fizz,,,Fizz,Buzz,,Fizz,,,FizzBuzz,,,Fizz,,Buzz,Fizz,,,Fizz,Buzz,,Fizz,,,FizzBuzz,,,Fizz,,Buzz,Fizz,,,Fizz,Buzz,,Fizz,,,FizzBuzz,,,Fizz,,Buzz,Fizz,,,Fizz,Buzz,,Fizz,,,FizzBuzz,,,Fizz,,Buzz,Fizz,,,Fizz,Buzz,'
+            solved: 'false'
         },
         {
             id:'2',
@@ -18,7 +17,6 @@
             class: 'Palindrome',
             parameters: 'String pali',
             return: 'boolean',
-            solved: 'false',
-            text: 'True,True,True,True,True,false,false,True,false,True,True,True,false,false'
+            solved: 'false'
         }
 ]

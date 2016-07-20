@@ -8,8 +8,8 @@ public class PalindromeTest {
 
         Palindrome test = new Palindrome();
 
-        Scanner sc = new Scanner(new File("palindromes.txt"));
-        Scanner scA = new Scanner(new File("paliAnswers.txt"));
+        Scanner sc = new Scanner(new File("../palindromes.txt"));
+        Scanner scA = new Scanner(new File("../paliAnswers.txt"));
 
         boolean correct = true;
         while(sc.hasNext()) {
@@ -25,7 +25,7 @@ public class PalindromeTest {
         }
 
         if(correct) {
-            System.out.println("Correct!");
+            System.out.print("Correct!");
         }
     }
 }

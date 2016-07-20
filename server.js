@@ -86,15 +86,12 @@ app.post('/file', multipartyMiddleware, function(req, res) {
                         // The program ran without any errors
                         else if(stdout) {
                             var json = JSON.stringify(stdout);
-                            var correct = req.body.problem.text;
                             // If the output matches what is in the database it is correct
-                            if(stdout == correct) {
+                            if(stdout == "Correct!") {
+                                console.log(stdout);
                                 res.json({ status: 'Correct!' });
                             } else {
-                                compareOutput(correct, stdout, function(output) {
-                                    console.log(output);
-                                    res.json({ status: 'Incorrect', text: output });
-                                });
+                                    res.json({ status: 'Incorrect', text: stdout });
                             }
                         }
 
@@ -115,16 +112,6 @@ app.post('/file', multipartyMiddleware, function(req, res) {
     }
 });
 
-function compareOutput(correct, incorrect, callback) {
-    var correctArr = correct.split(','); 
-    var incorrectArr = incorrect.split(',');
-    var i;
-    for(i = 0; correctArr[i] == incorrectArr[i]; i++);
-
-    var out = "On case #" + (i+1) + ": expected '" + correctArr[i] + "' " + "but output was '" + incorrectArr[i] + "'";
-    console.log(out);
-    callback(out);
-}
 function getProblems(res, problems) {
     MongoClient.connect(url, function (err, db) {
             var data = db.collection(collection).find(problems).toArray(function(err, result) {
