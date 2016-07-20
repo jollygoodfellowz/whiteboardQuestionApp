@@ -6,15 +6,10 @@ public class PalindromeTest {
     
     public static void main(String[] args) throws FileNotFoundException {
 
-        if(args.length < 1) {
-            System.out.println("Please pass in a file with palindromes");
-            return;
-        }
-
         Palindrome test = new Palindrome();
 
-        Scanner sc = new Scanner(new File(args[0]));
-        Scanner scA = new Scanner(new File(args[1]));
+        Scanner sc = new Scanner(new File("palindromes.txt"));
+        Scanner scA = new Scanner(new File("paliAnswers.txt"));
 
         boolean correct = true;
         while(sc.hasNext()) {
