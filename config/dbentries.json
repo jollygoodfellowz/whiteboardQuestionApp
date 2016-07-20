@@ -11,8 +11,14 @@
             text: ',,Fizz,,Buzz,Fizz,,,Fizz,Buzz,,Fizz,,,FizzBuzz,,,Fizz,,Buzz,Fizz,,,Fizz,Buzz,,Fizz,,,FizzBuzz,,,Fizz,,Buzz,Fizz,,,Fizz,Buzz,,Fizz,,,FizzBuzz,,,Fizz,,Buzz,Fizz,,,Fizz,Buzz,,Fizz,,,FizzBuzz,,,Fizz,,Buzz,Fizz,,,Fizz,Buzz,,Fizz,,,FizzBuzz,,,Fizz,,Buzz,Fizz,,,Fizz,Buzz,,Fizz,,,FizzBuzz,,,Fizz,,Buzz,Fizz,,,Fizz,Buzz,'
         },
         {
-            name: 'Danielle',
-            problem: 'blah',
-            solved: 'false'
+            id:'2',
+            name: 'Palindrome',
+            problem: 'Is the string provided a palindrome or not? A palindrome is a string that reads the same forwards and backwards. For example: racecar. If the provided string is a palindrome simply return true if not false.',
+            function: 'isPalindrome',
+            class: 'Palindrome',
+            parameters: 'String pali',
+            return: 'boolean',
+            solved: 'false',
+            text: 'True,True,True,True,True,false,false,True,false,True,True,True,false,false'
         }
 ]
