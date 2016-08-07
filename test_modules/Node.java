@@ -24,6 +24,7 @@ public class Node {
     public void print() {
         System.out.print(data + "-->");
         if(next == null) {
+            System.out.println();
             return;
         }
         Node temp = next;

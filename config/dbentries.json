@@ -30,5 +30,17 @@
             return: 'Node',
             solved: 'false',
             files: 'Node.java'
+        },
+
+        {
+            id:'4',
+            name: 'Delete the Nth node in a Linked List',
+            problem: 'Given a linked list, which is defined as follows: class Node{ int data; Node next; }. Delete the index provided in your function. Be sure to check for invalid indexes and null.',
+            function: 'deleteNth',
+            class: 'DeleteNth',
+            parameters: 'Node curr, int index',
+            return: 'Node',
+            solved: 'false',
+            files: 'Node.java'
         }
 ]
