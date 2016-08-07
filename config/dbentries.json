@@ -6,7 +6,7 @@
             function: 'multiplesof3and5',
             class: 'FizzBuzz',
             parameters:'int x',
-            return: 'int',
+            return: 'String',
             solved: 'false'
         },
         {
