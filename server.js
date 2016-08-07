@@ -53,7 +53,12 @@ app.post('/file', multipartyMiddleware, function(req, res) {
         // Test module name 
         testPath = "test_modules/";
 
-        testModule = req.body.problem.name + "Test";
+        testModule = req.body.problem.class + "Test";
+        extraFiles = " ";
+        // We can add extra files to compile if needed
+        if(typeof req.body.problem.files != 'undefined') {
+            extraFiles = testPath + req.body.problem.files;
+        } 
 
         // Save the uploaded file
         fs.readFile(req.files.file.path, function (err, data) {
@@ -63,7 +68,7 @@ app.post('/file', multipartyMiddleware, function(req, res) {
                 // Compile the source file and the test module
                 var buildDir = testPath + "build/";
                 var testFile = testPath + testModule + ".java";
-                var javac = "javac -d " + buildDir + " " + testFile + " " + newPath;
+                var javac = "javac -d " + buildDir + " " + testFile + " " + newPath + " " + extraFiles ;
 
                 exec(javac, (error, stdout, stderr) => {
                     if(error) {

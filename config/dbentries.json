@@ -18,5 +18,17 @@
             parameters: 'String pali',
             return: 'boolean',
             solved: 'false'
+        },
+
+        {
+            id:'3',
+            name: 'Reverse a Linked List',
+            problem: 'Given a linked list, which is defined as follows: class Node { int data; Node next; }</pre>. Reverse the order of the list. For example: a list such as 1-->2-->3 would become 3-->2-->1.',
+            function: 'reverse',
+            class: 'Reverse',
+            parameters: 'Node curr',
+            return: 'Node',
+            solved: 'false',
+            files: 'Node.java'
         }
 ]
