@@ -64,5 +64,25 @@
             return: 'Node',
             solved: 'false',
             files: 'Node.java'
+        },
+        {
+            id: '7',
+            name: 'Fibonacci sequence small',
+            problem: 'The Fibonacci sequence is defined as follows: F0 = 0 and F1 = 1. The recurrence relation is Fn = Fn-1 + Fn-2. For example F2 = F1 + F0, F0 and F1 are already defined, so F2 = 1. The pattern continues in this manner. Write a function to return the nth Fibonacci number. In this version you will not be asked to return a number larger than Integer.MAX_VALUE in java, which is 2147483647.',
+            function: 'fib',
+            class: 'FibonacciSmall',
+            parameters: 'int n',
+            return: 'int',
+            solved: 'false'
+        },
+        {
+            id: '8',
+            name: 'Fibonacci sequence large',
+            problem: 'See Fibonacci small for the defintion of the Fibonacci sequence. In this version of the Fibonacci sequence you will be asked to return numbers larger than the max value an integer can hold in java. Instead of returning an int you will need to return a String representation of the nth Fibonacci numer',
+            function: 'fib',
+            class: 'FibonacciLarge',
+            parameters: 'int n',
+            return: 'String',
+            solved: 'false'
         }
 ]
