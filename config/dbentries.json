@@ -42,5 +42,16 @@
             return: 'Node',
             solved: 'false',
             files: 'Node.java'
+        },
+        {
+            id:'5',
+            name: 'Sort a Linked List',
+            problem: 'Given a linked list, which is defined as follows: class Node{ int data; Node next; }. Sort the list in ascending order.',
+            function: 'sort',
+            class: 'SortedLinkedList',
+            parameters: 'Node curr',
+            return: 'Node',
+            solved: 'false',
+            files: 'Node.java'
         }
 ]
