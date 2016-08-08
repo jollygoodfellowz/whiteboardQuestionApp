@@ -53,5 +53,16 @@
             return: 'Node',
             solved: 'false',
             files: 'Node.java'
+        },
+        {
+            id: '6',
+            name: 'Detect a cycle in a Linked List',
+            problem: 'Given a linked list, which is defined as follows: class Node{ int data; Node next; }. Write a function that detects a cycle in a linked list. A cycle is when the tail of a linked list points at the head of the linked list.',
+            function: 'detect',
+            class: 'DetectCycle',
+            parameters: 'Node curr',
+            return: 'Node',
+            solved: 'false',
+            files: 'Node.java'
         }
 ]

@@ -4,6 +4,7 @@ public class DeleteNth {
         if(curr == null) return null;
         if(index < 0 ) return curr;
 
+        if(index > 1) return curr.next;
         // Delete the head of the list
         if(index == 0) {
             // Does the list have another element?

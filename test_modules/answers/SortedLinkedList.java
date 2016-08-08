@@ -17,7 +17,6 @@ public class SortedLinkedList {
         while(!list.isEmpty()) {
             curr.add(list.poll());
         }
-
         return curr;
     }
 }
